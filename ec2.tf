@@ -3,7 +3,10 @@ provider "aws" {
   
 }
 resource "aws_instance" "app-server" {
-  ami="ami-0c55b159cbfafe1f0"
   instance_type="t2.micro"
+  key_name = "pj2"
+  monitoring = true
+  vpc_security_group_ids = [ "sg-08c0e8649d7b3efb9" ]
+  subnet_id = "subnet-09334403cb3648032"
 
 }
