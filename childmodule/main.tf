@@ -6,3 +6,6 @@ module "aws_instance" {
     instance_type = "t2.micro"
     region.value = "us.east-1" 
 }
+output "public_ip" {
+  value = module.aws_instance.public-ip-address
+}
